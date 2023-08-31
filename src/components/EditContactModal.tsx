@@ -106,9 +106,10 @@ const EditContactModal: React.FC<Props> = props => {
       <h2>{'id' in formState ? 'Edit' : 'Create'} Contact</h2>
       <form
         onSubmit={handleSubmit}>
-        <div className="form-row">
-          <label htmlFor="firstName">First Name</label>
+        <div className="flex pb-3">
+          <label htmlFor="firstName" className="w-24">First Name</label>
           <input
+            className="input input-bordered flex-grow"
             ref={focusInputRef}
             name="firstName"
             id="firstName"
@@ -119,9 +120,10 @@ const EditContactModal: React.FC<Props> = props => {
             required
           />
         </div>
-        <div className="form-row">
-          <label htmlFor="lastName">Last Name</label>
+        <div className="flex pb-3">
+          <label htmlFor="lastName" className="w-24">Last Name</label>
           <input
+            className="input input-bordered flex-grow"
             name="lastName"
             id="lastName"
             type="text"
@@ -131,11 +133,12 @@ const EditContactModal: React.FC<Props> = props => {
             required
           />
         </div>
-        <div className="form-row">
-          <label>Status</label>
-          <div>
+        <div className="flex pb-3">
+          <label className="w-24">Status</label>
+          <div className='flex-grow'>
             <div>
               <input
+                className="radio align-middle"
                 type="radio"
                 id="statusActive"
                 name="status"
@@ -144,10 +147,11 @@ const EditContactModal: React.FC<Props> = props => {
                 onChange={handleChange}
                 required
               />
-              <label htmlFor="statusActive">Active</label>
+              <label htmlFor="statusActive" className='p-2'>Active</label>
             </div>
             <div>
               <input
+                className="radio align-middle"
                 type="radio"
                 id="statusInactive"
                 name="status"
@@ -155,11 +159,11 @@ const EditContactModal: React.FC<Props> = props => {
                 checked={formState.status === Statuses.Inactive}
                 onChange={handleChange}
               />
-              <label htmlFor="statusInactive">Inactive</label>
+              <label htmlFor="statusInactive" className='p-2'>Inactive</label>
             </div>
           </div>
         </div>
-        <div className="form-row">
+        <div className="flex">
           <button type="submit" className='btn btn-primary'>Submit</button>
         </div>
       </form>
