@@ -39,7 +39,7 @@ const ContactList: React.FC<Props> = props => {
       </svg>
       <div className="">
         <h3 className="mt-0">No Contact Found!</h3>
-        <p className="">Please add contact form <label htmlFor="AddContact"><a className="link link-primary no-underline" tabIndex={0}>Create Contact</a></label> button</p>
+        <p className="">Please add contact from <label htmlFor="AddContact"><a className="link link-primary no-underline" tabIndex={0}>Create Contact</a></label> button</p>
       </div>
     </div>
 }
