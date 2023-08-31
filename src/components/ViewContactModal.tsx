@@ -57,6 +57,7 @@ const ViewContactModal: React.FC<Props> = ({contacts, deleteContact}) => {
   
   const handleDeleteContact = () => {
     contact && deleteContact(contact.id as number)
+    closeModal()
   }
   
   return (
