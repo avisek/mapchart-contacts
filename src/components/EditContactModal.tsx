@@ -103,11 +103,13 @@ const EditContactModal: React.FC<Props> = props => {
       isOpen={isOpen}
       onClose={closeModal}
     >
-      <h2>{'id' in formState ? 'Edit' : 'Create'} Contact</h2>
+      <h2
+        className="mt-0 text-4xl"
+      >{'id' in formState ? 'Edit' : 'Create'} Contact</h2>
       <form
         onSubmit={handleSubmit}>
-        <div className="flex pb-3">
-          <label htmlFor="firstName" className="w-24">First Name</label>
+        <div className="flex flex-wrap pb-3">
+          <label htmlFor="firstName" className="leading-[3rem] w-24">First Name</label>
           <input
             className="input input-bordered flex-grow"
             ref={focusInputRef}
@@ -120,8 +122,8 @@ const EditContactModal: React.FC<Props> = props => {
             required
           />
         </div>
-        <div className="flex pb-3">
-          <label htmlFor="lastName" className="w-24">Last Name</label>
+        <div className="flex flex-wrap pb-3">
+          <label htmlFor="lastName" className="leading-[3rem] w-24">Last Name</label>
           <input
             className="input input-bordered flex-grow"
             name="lastName"
@@ -133,10 +135,10 @@ const EditContactModal: React.FC<Props> = props => {
             required
           />
         </div>
-        <div className="flex pb-3">
-          <label className="w-24">Status</label>
+        <div className="flex flex-wrap pb-3">
+          <label className="leading-6 w-24">Status</label>
           <div className='flex-grow'>
-            <div>
+            <div className="">
               <input
                 className="radio align-middle"
                 type="radio"
@@ -149,7 +151,7 @@ const EditContactModal: React.FC<Props> = props => {
               />
               <label htmlFor="statusActive" className='p-2'>Active</label>
             </div>
-            <div>
+            <div className="mt-2">
               <input
                 className="radio align-middle"
                 type="radio"
@@ -164,7 +166,7 @@ const EditContactModal: React.FC<Props> = props => {
           </div>
         </div>
         <div className="flex">
-          <button type="submit" className='btn btn-primary'>Submit</button>
+          <button type="submit" className='btn btn-primary'>{'id' in formState ? 'Confirm' : 'Create'}</button>
         </div>
       </form>
     </Modal>

@@ -15,8 +15,9 @@ const Contacts: React.FC = () => {
     <>
       <h2>Contacts</h2>
       
-      <div>
+      <div className="mt-1">
         <Button
+          id="AddContact"
           color="primary"
           onClick={createContact}
         >

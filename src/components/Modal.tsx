@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { Button } from 'react-daisyui'
 
 export interface ModalProps {
   isOpen: boolean
@@ -46,9 +47,9 @@ const Modal: React.FC<ModalProps> = ({
   return (
     <dialog ref={modalRef} onKeyDown={handleKeyDown} className="bg-base-100 text-base-content p-6 rounded-xl shadow-2xl">
       {hasCloseBtn && (
-        <button className="btn btn-ghost btn-square" onClick={handleCloseModal}>
-          X
-        </button>
+        <Button size="sm" color="ghost" shape="circle" className="absolute right-2 top-2" onClick={handleCloseModal}>
+          x
+        </Button>
       )}
       {children}
     </dialog>

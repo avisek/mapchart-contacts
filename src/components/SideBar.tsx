@@ -63,7 +63,7 @@ export default function SideBar({ menus, isOpen, children }: ModalProps) {
           <ThemeToggler />
         </div>
       </Navbar>
-      <div className="flex-grow px-6 md:px-12 xl:pr-24">
+      <div className="flex-grow px-6 md:px-12 xl:pr-24 pb-12">
         {children}
       </div>
     </Drawer>

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { Button, Swap } from 'react-daisyui'
+import { useEffect, useState } from 'react'
+import { Swap } from 'react-daisyui'
 
 function ThemeToggler() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light')
