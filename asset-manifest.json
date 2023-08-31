@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mapchart-contacts/static/css/main.f24809f1.css",
+    "main.js": "/mapchart-contacts/static/js/main.3ca5cc33.js",
+    "static/js/787.06d3fabb.chunk.js": "/mapchart-contacts/static/js/787.06d3fabb.chunk.js",
+    "index.html": "/mapchart-contacts/index.html",
+    "main.f24809f1.css.map": "/mapchart-contacts/static/css/main.f24809f1.css.map",
+    "main.3ca5cc33.js.map": "/mapchart-contacts/static/js/main.3ca5cc33.js.map",
+    "787.06d3fabb.chunk.js.map": "/mapchart-contacts/static/js/787.06d3fabb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f24809f1.css",
+    "static/js/main.3ca5cc33.js"
+  ]
+}
