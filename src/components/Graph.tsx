@@ -1,17 +1,5 @@
-import { useQuery } from '@tanstack/react-query'
-import { getHistoricalData } from '../utils/dataService'
 import { Chart, AxisOptions } from 'react-charts';
 import { useMemo } from 'react';
-
-interface GraphData {
-  [date: string]: number;
-}
-
-interface HistoricalData {
-  cases: GraphData
-  deaths: GraphData
-  recovered: GraphData
-}
 
 function Graph({ data, color }: any) {
   
@@ -21,13 +9,11 @@ function Graph({ data, color }: any) {
     }),
     []
   )
-
+  
   const secondaryAxes = useMemo(
-    (): AxisOptions<any>[] => [
-      {
-        getValue: datum => datum.cases,
-      },
-    ],
+    (): AxisOptions<any>[] => [{
+      getValue: datum => datum.cases,
+    }],
     []
   )
   

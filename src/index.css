@@ -13,17 +13,39 @@
   h3 {
     @apply text-2xl mt-6 mb-2;
   }
-  /* a {
-    @apply text-blue-600 underline;
-  } */
-  text {
-    fill: hsl(var(--bc)) !important;
-  }
-  line {
-    /* @apply !stroke-current; */
-  }
 }
 
 @tailwind components;
 
 @tailwind utilities;
+
+
+.leaflet-container {
+  @apply !bg-base-200;
+}
+
+[data-theme="dark"] .leaflet-tile-pane {
+  filter: invert(100%) sepia(100%) hue-rotate(175deg) brightness(150%) contrast(100%);
+}
+
+[data-theme="dark"] .leaflet-popup-content-wrapper,
+[data-theme="dark"] .leaflet-popup-tip {
+  background-color: hsl(var(--b1)) !important;
+  color: hsl(var(--bc)) !important;
+}
+
+.leaflet-marker-icon {
+  opacity: 0.93;
+}
+
+[data-theme="dark"] .leaflet-marker-icon {
+  opacity: 0.8;
+}
+
+.leaflet-marker-icon:hover {
+  opacity: 1;
+}
+
+[data-theme="dark"] .ReactChart .axes {
+  filter: invert(100%) hue-rotate(180deg);
+}

@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { getHistoricalData } from '../utils/dataService'
-import { Chart, AxisOptions } from 'react-charts';
-import { useMemo } from 'react';
-import Graph from './Graph';
+import { Chart, AxisOptions } from 'react-charts'
+import { useMemo } from 'react'
+import Graph from './Graph'
 
 interface GraphData {
-  [date: string]: number;
+  [date: string]: number
 }
 
 interface HistoricalData {
@@ -26,7 +26,7 @@ function Charts() {
   
   if (countrySpecificDataQuery.isLoading) {
     return (
-      <div className='flex justify-center w-full h-full'>
+      <div className="flex justify-center w-full h-full">
         <span className="loading loading-dots loading-md"></span>
       </div>
     )
@@ -42,15 +42,18 @@ function Charts() {
   const cases = []
   let i = 7
   for (const key in data.cases) {
-    i++ % 7 === 0 && cases.push({ date: transformDate(key), cases: data.cases[key] })
+    i++ % 7 === 0 &&
+      cases.push({ date: transformDate(key), cases: data.cases[key] })
   }
   const deaths = []
   for (const key in data.deaths) {
-    i++ % 7 === 0 && deaths.push({ date: transformDate(key), cases: data.deaths[key] })
+    i++ % 7 === 0 &&
+      deaths.push({ date: transformDate(key), cases: data.deaths[key] })
   }
   const recovered = []
   for (const key in data.recovered) {
-    i++ % 7 === 0 && recovered.push({ date: transformDate(key), cases: data.recovered[key] })
+    i++ % 7 === 0 &&
+      recovered.push({ date: transformDate(key), cases: data.recovered[key] })
   }
   
   const casesData: any = [
@@ -73,7 +76,7 @@ function Charts() {
   ]
   
   return (
-    <div className='w-full h-full min-h-[32rem] grid-in-charts grid grid-rows-3 gap-3'>
+    <div className="grid-in-charts w-full h-full min-h-[32rem] grid grid-rows-3 gap-3">
       <Graph data={casesData} color="hsl(var(--er))" />
       <Graph data={deathsData} color="hsl(var(--bc))" />
       <Graph data={recoveredData} color="hsl(var(--su))" />

@@ -74,8 +74,8 @@ const EditContactModal: React.FC<Props> = props => {
   
   const getNewContactId = (contacts: Contact[]): number => {
     let newId = 0
-    contacts.forEach(contact => {
-      if (newId === contact.id) newId++
+    contacts.map(contact => contact.id ?? 0).sort().forEach(id => {
+      if (newId === id) newId++
     })
     return newId
   }
@@ -165,7 +165,7 @@ const EditContactModal: React.FC<Props> = props => {
             </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex mt-2">
           <button type="submit" className='btn btn-primary'>{'id' in formState ? 'Confirm' : 'Create'}</button>
         </div>
       </form>

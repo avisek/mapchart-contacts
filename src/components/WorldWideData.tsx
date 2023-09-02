@@ -6,11 +6,9 @@ interface WorldWideData {
   todayCases: number
   todayDeaths: number
   todayRecovered: number
-  critical: number
   cases: number
   deaths: number
   recovered: number
-  active: number
 }
 
 function WorldWideData() {
@@ -18,29 +16,29 @@ function WorldWideData() {
     queryKey: ['WORLD_WIDE'],
     queryFn: getWorldWideData,
   })
-  
+
   if (worldWideDataQuery.isError) {
     return <div>Error fetching data.</div>
   }
-  
+
   if (worldWideDataQuery.isLoading) {
     return (
-      <div className='flex justify-center h-32'>
+      <div className="flex justify-center h-32">
         <span className="loading loading-dots loading-md"></span>
       </div>
     )
   }
-  
+
   const data: WorldWideData = worldWideDataQuery.data.data
-  
+
   return (
-    <div className='grid grid-cols-2 md:grid-cols-3 gap-3 grid-in-global'>
-      <DataItem label="Today Cases"     value={data.todayCases}     />
-      <DataItem label="Today Deaths"    value={data.todayDeaths}    />
+    <div className="grid-in-global grid grid-cols-2 md:grid-cols-3 gap-3">
+      <DataItem label="Today Cases" value={data.todayCases} />
+      <DataItem label="Today Deaths" value={data.todayDeaths} />
       <DataItem label="Today Recovered" value={data.todayRecovered} />
-      <DataItem label="Total Cases"     value={data.cases}          />
-      <DataItem label="Total Deaths"    value={data.deaths}         />
-      <DataItem label="Total Recovered" value={data.recovered}      />
+      <DataItem label="Total Cases" value={data.cases} />
+      <DataItem label="Total Deaths" value={data.deaths} />
+      <DataItem label="Total Recovered" value={data.recovered} />
     </div>
   )
 }

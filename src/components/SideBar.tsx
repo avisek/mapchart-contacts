@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { Drawer, Button, Menu, Navbar, Swap } from "react-daisyui"
+import { Drawer, Button, Menu, Navbar } from "react-daisyui"
 import ThemeToggler from "./ThemeToggler"
 
 export interface MenuItem {
@@ -11,12 +11,10 @@ export interface MenuItem {
 
 export interface ModalProps {
   menus: MenuItem[]
-  isOpen: boolean
-  currentPath: string
   children: React.ReactNode
 }
 
-export default function SideBar({ menus, isOpen, children }: ModalProps) {
+export default function SideBar({ menus, children }: ModalProps) {
   const { pathname } = useLocation()
   const [visible, setVisible] = useState(false)
   const toggleVisible = useCallback(() => {
@@ -41,23 +39,13 @@ export default function SideBar({ menus, isOpen, children }: ModalProps) {
       <Navbar className="w-full px-3">
         <div className="flex-none lg:hidden">
           <Button shape="square" color="ghost" onClick={toggleVisible}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-6 h-6 stroke-current"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
+            <svg className="inline-block w-6 h-6 stroke-current" viewBox="0 0 24 24" fill="none" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </Button>
         </div>
         <div className="flex-1 px-2 mx-2">
-          <h1></h1>
+          {/* <h1></h1> */}
         </div>
         <div className="flex-none">
           <ThemeToggler />
