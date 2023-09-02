@@ -1,46 +1,89 @@
-# Getting Started with Create React App
+# Contact Management App with Charts and Maps
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<table>
+  <tr>
+    <td style="border: 0px;">
+      <img src="./screenshots/1.png" />
+    </td>
+    <td style="border: 0px;">
+      <img src="./screenshots/2.png" />
+    </td>
+  </tr>
+</table>
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup and Usage](#setup-and-usage)
+- [APIs Used](#apis-used)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Welcome to the Contact Management App with Charts and Maps! This application is a practical demonstration of modern web development techniques, featuring a comprehensive contact management system with integrated COVID-19 data visualizations.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Contacts Page:**
+  - Add, view, edit, and delete contacts.
+  - Efficient state management using Redux.
+- **Charts and Maps Page:**
+  - Interactive line graph showing COVID-19 case fluctuations.
+  - Dynamic map with country-specific COVID-19 data.
+  
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **ReactJS**: Building reusable UI components.
+- **TypeScript**: Ensuring type-checking and robust code.
+- **TailwindCSS**: Styling the application for a sleek and responsive design.
+- **React Router v6**: Managing application routing.
+- **React Query (TanstackQuery)**: Efficiently handling API calls and data management.
 
-### `npm run build`
+## Setup and Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/avisek/mapchart-contacts.git
+cd mapchart-contacts
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install Dependencies:**
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+3. **Start the Development Server:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. **Access the Application:**
+Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to use the app.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## APIs Used
 
-## Learn More
+To provide real-time COVID-19 data, this app utilizes the following APIs:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Disease.sh - Global Cases](https://disease.sh/v3/covid-19/all): World-wide COVID-19 data.
+- [Disease.sh - Country Cases](https://disease.sh/v3/covid-19/countries): Country-specific COVID-19 data.
+- [Disease.sh - Historical Data](https://disease.sh/v3/covid-19/historical/all?lastdays=all): Historical data for creating case trend graphs.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
+
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your forked repository.
+5. Submit a pull request with a clear description of your changes.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
